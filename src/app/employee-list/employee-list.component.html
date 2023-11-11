@@ -1,0 +1,34 @@
+<div class="text-center">
+    <h1 class="beautiful-font" *ngIf="!fetchingAllList">Employees For Dept {{departmentName}}</h1>
+    <h1 class="beautiful-font" *ngIf="fetchingAllList">List of All Employees</h1>
+</div>
+<div class = "alert alert-success" *ngIf='message'>{{message}}</div>
+<div class = "container">
+    <table class="table table-striped">
+<thead>
+    <button class = "btn btn-success" (click)="addEmployee()">Add Employee</button>
+ <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Date Of Birth</th>
+    <th>Salary</th>
+    <th>Department</th>
+    <th></th>
+    <th></th>
+ </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let employee of employeeList">
+        <td>{{ employee.id.toString().padStart(4, '0') }}</td>
+        <td> {{employee.name}}</td>
+        <td> {{employee.dateOfBirth | date:"dd-MM-yyyy"}}</td>
+        <td> {{employee.salary}}</td>
+        <td> {{employee.department}}</td>
+        <td><button class = "btn btn-success" (click)="updateEmployee(employee.id)">Update</button></td>
+        <td><button class = "btn btn-warning" (click)="deleteEmployee(employee.id)" >Delete</button></td>
+    </tr>
+</tbody>
+</table>
+</div>
+<!-- <pagination-controls (pageChange)="page = $event; updatePagedEmployeeList()"></pagination-controls> -->
+

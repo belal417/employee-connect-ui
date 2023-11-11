@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+/* styles.css or styles.scss */
+
+h1 {
+    font-family: 'Your Desired Font', sans-serif; /* Replace 'Your Desired Font' with the actual font name or a web font link */
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold; /* Adjust the font weight as needed */
+    margin-top: 10px; /* Add some margin to push the header slightly lower */
+    /* Add more font-related styles as desired */
+  }
+  

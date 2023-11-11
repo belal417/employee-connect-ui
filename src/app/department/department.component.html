@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6"> <!-- Adjust the column width as needed -->
+            <h1 class="text-left">Department</h1>
+        </div>
+    </div>
+    <div class="alert alert-warning" *ngIf="nameAlert.dirty && nameAlert.invalid">Enter at least 3 characters</div>
+    <div class="alert alert-success" *ngIf="message">{{message}}</div>
+    <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+    <form (ngSubmit)="!todoForm.invalid && saveDepartment()" #todoForm="ngForm">
+        <fieldset class="form-group">
+            <label>Name</label>
+            <input type="text" #nameAlert="ngModel" [(ngModel)]="department.name" class="form-control" name="name" required = "required" minlength="3">
+        </fieldset>
+        <button class="btn btn-success">Save</button>
+    </form>
+</div>

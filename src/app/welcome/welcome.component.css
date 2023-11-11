@@ -1,0 +1,19 @@
+.fixed-button {
+    position: fixed;
+    top: 250px; /* Adjust the top value to position the button vertically */
+    right: 650px; /* Adjust the right value to position the button horizontally */
+    z-index: 1; /* Ensure the button is above other elements */
+  }
+  
+  .container {
+    margin-top: 50px; /* Provide space at the top to prevent overlap with the fixed button */
+  }
+  
+  .custom-table {
+    max-width: 50%; /* Adjust the max-width to make the table smaller */
+    margin: 0 auto; /* Center the table horizontally */
+  }
+
+  .align-right {
+    text-align: right; /* Align text to the right in the table cells */
+  }

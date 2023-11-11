@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.login-container {
+    width: 350px; /* Adjust the width to make it bigger */
+    margin: 0 auto; /* Center horizontally */
+    margin-top: -150px; /* Move it upwards by changing the margin-top value */
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px; /* Increase the spacing between form elements */
+}
+
+.alert-container {
+    position: absolute;
+    top: 135px; /* Adjust the top position to place the alert at the desired height */
+    text-align: center;
+}
+
+
+
+

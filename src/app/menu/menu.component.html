@@ -1,0 +1,28 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div>
+            <a routerLink="" class="navbar-brand">
+                <img src="assets/images/logo.png" alt="Your Logo" width="40" height="40">
+            </a>
+        </div>
+        <ul class="navbar-nav">
+            <li *ngIf="authenticationService.isUserLoggedIn()">
+                <a routerLink="" class="nav-link">Home</a>
+            </li>
+            <li *ngIf="authenticationService.isUserLoggedIn()">
+                <a routerLink="/departments" class="nav-link">Departments</a>
+            </li>
+            <li *ngIf="authenticationService.isUserLoggedIn()">
+                <a routerLink="/all-employees/-1" class="nav-link">Employees</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li *ngIf="!authenticationService.isUserLoggedIn()">
+                <a routerLink="/login" class="nav-link">Login</a>
+            </li>
+            <li *ngIf="authenticationService.isUserLoggedIn()">
+                <a routerLink="/logout" class="nav-link">Logout</a>
+            </li>
+        </ul>
+    </nav>
+</header>

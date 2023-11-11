@@ -1,0 +1,9 @@
+.text-and-button-container {
+    display: flex;
+    align-items: center; /* Vertically center items */
+  }
+  
+  .text {
+    flex: 1;
+    margin-right: -100px; /* Add some spacing between text and button */
+  }

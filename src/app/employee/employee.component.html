@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="text-left">Employee</h1>
+        </div>
+    </div>
+    
+    <div class="alert alert-warning" *ngIf="deptAlert.invalid && deptAlert.dirty">Enter proper department</div>
+    <div class="alert alert-warning" *ngIf="salaryAlert.invalid && salaryAlert.dirty">Enter proper values</div>
+    <div class="alert alert-warning" *ngIf="nameAlert.invalid && nameAlert.dirty">Enter at least 4 characters</div>
+    <div class="alert alert-warning" *ngIf="dobAlert.invalid && dobAlert.untouched">Enter proper date</div>
+
+    <div class="alert alert-success" *ngIf="successMessage">{{successMessage}}</div>
+    <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+    <form (ngSubmit)="!employeeForm.invalid && saveEmployee()" #employeeForm="ngForm">
+        <fieldset class="form-group">
+            <label>Name</label>
+            <input type="text" #nameAlert="ngModel" [(ngModel)]="employee.name" class="form-control" name="name"  minlength="4" required>
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Salary</label>
+            <input type="text" #salaryAlert="ngModel" [(ngModel)]="employee.salary" class="form-control" name="salary" required>
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Date Of Birth</label>
+            <input type="date" #dobAlert="ngModel" [ngModel]="employee.dateOfBirth | date:'yyyy-MM-dd'" (ngModelChange)="employee.dateOfBirth = $event" class="form-control" name="dateOfBirth" required>
+        </fieldset>
+        <fieldset>
+            <div class="form-group">
+                <label for="departmentId">Department</label>
+                <select id="departmentId" class="form-control" #deptAlert="ngModel"  [(ngModel)]="employee.departmentId" name="departmentId" required>
+                    <option value="" disabled>Select a department</option>
+                    <option *ngFor="let department of departmentList" [value]="department.id">{{ department.name }}</option>
+                </select>
+            </div>
+        </fieldset>
+        <button class="btn btn-success">Save</button>
+    </form>
+</div>

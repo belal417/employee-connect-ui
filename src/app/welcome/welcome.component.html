@@ -1,0 +1,26 @@
+<div class="container text-center mt-5">
+    <h1>Welcome to Employee Management App</h1>
+    <p>Effortlessly manage your workforce with our powerful and intuitive employee management application.</p>
+    <p>Streamline HR tasks, track employee data, and improve productivity with our easy-to-use features.</p>
+    <p>Get started today to revolutionize how you manage your employees.</p>
+    <a routerLink="/login" class="btn btn-primary" *ngIf="!authenticationService.isUserLoggedIn()">Login</a>
+</div>
+
+    <div class="container">
+        <button class="btn btn-success"  *ngIf="authenticationService.isUserLoggedIn()" (click)="fetchData()">Get Max Salary Details</button>
+        <table class="table table-striped custom-table">
+            <thead>
+                <tr *ngIf="data">
+                    <th>Department Name</th>
+                    <th class="align-right">Max Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let maxsal of data">
+                    <td> {{maxsal.name}}</td>
+                    <td class="align-right"> {{maxsal.maxSalary}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
